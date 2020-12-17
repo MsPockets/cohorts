@@ -70,7 +70,6 @@ button:focus {
 	margin: 20px;
 	max-width: 40vw;
 	border-radius: 15px;
-
 }
 .chat-bar {
 	position: fixed;
@@ -99,4 +98,7 @@ button:focus {
 }
 .chat-box {
 	padding-bottom: 55px;
+}
+.sender {
+	font-size: 10px;
 }

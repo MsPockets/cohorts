@@ -6,7 +6,7 @@
   export let user
 
   async function newMessageScroll() {
-    console.log('data received')
+    console.log(user)
     await tick()
     animateScroll.scrollToBottom()
   
@@ -17,7 +17,12 @@
 <div class="box chat-box" id="chat-box" bind:this={chatBox}>
     {#each messages.sort((a,b) => a.date - b.date) as {message}}
       <div class="notification">
-        {user.name}:{message}
+        <div class="sender">
+        {user.displayName || user.email}:
+      </div> 
+      <div class="message-content">
+        {message}
+      </div>
       </div>
     {/each}
   </div>

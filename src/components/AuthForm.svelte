@@ -3,15 +3,17 @@
   let mode = "signIn"
   let email = ''
   let password = ''
+  let displayName = ''
 
   async function handleSubmit() {
     if(mode == 'signIn') {
       await auth.signInWithEmailAndPassword(email, password)
     } else{
-      await auth.createUserWithEmailAndPassword(email, password)
+      await auth.createUserWithEmailAndPassword(email, password, displayName)
     }
     email = ''
     password = ''
+    displayName = ''
   }
 </script>
 
@@ -23,8 +25,12 @@
     <input type="email" class="input" required bind:value={email}/>
   </div>
   <div class="field">
-    <label for="" class="label">Password</label>
-    <input type="password" class="input" required bind:value={password}/>
+    <label for="" class="label" placeholder="What would you like us to call you?">Display Name</label>
+    <input type="displayName" class="input" bind:value={displayName}/>
+  </div>
+  <div class="field">
+    <label for="" class="label">Password (Minimum of 6 characters)</label>
+    <input type="password" class="input" minlength="6" required bind:value={password}/>
   </div>
   <div class="field">
     <button type="submit">Enter Chat</button>
