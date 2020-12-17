@@ -30,7 +30,7 @@
 	<FirebaseApp {firebase} >
     <User let:user let:auth>
       <Chats {user} />
-        <button class="button" on:click={() => auth.signOut()}>Sign Out</button>
+        <button style="top: 0px; right: 0px; position: fixed;" class="button" on:click={() => auth.signOut()}>Sign Out</button>
       <div slot="signed-out">
       <AuthForm {auth} />
       </div>
