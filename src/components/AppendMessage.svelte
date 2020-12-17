@@ -13,13 +13,13 @@
     message =''
   }
 </script>
-<form on:submit|preventDefault={appendMessage}>
+<form class="chat-bar" on:submit|preventDefault={appendMessage}>
   <div class="field has-addons box">
-    <div class="control is-expanded">
+    <div class="control is-expanded message-form">
       <input type="text" class="input" bind:value={message}/>
     </div>
-    <div class="control">
-      <input type="submit" class="button is-info" value="⌲ Send"/>
+    <div class="control message-form">
+      <input type="submit" class="is-info" value="⌲ Send"/>
     </div>
   </div>
 </form>
