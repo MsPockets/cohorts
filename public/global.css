@@ -102,3 +102,6 @@ button:focus {
 .sender {
 	font-size: 10px;
 }
+.has-text-link {
+	background-color: lightgray;
+}

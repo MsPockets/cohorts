@@ -1,6 +1,6 @@
 <script>
   export let auth
-  let mode = "signIn"
+  let mode = "signUp"
   let email = ''
   let password = ''
   let displayName = ''
@@ -9,7 +9,11 @@
     if(mode == 'signIn') {
       await auth.signInWithEmailAndPassword(email, password)
     } else{
-      await auth.createUserWithEmailAndPassword(email, password, displayName)
+      await auth.createUserWithEmailAndPassword(email, password).then(function(result) {
+  return result.user.updateProfile({
+    displayName: displayName
+  })
+}).catch(function(error){})
     }
     email = ''
     password = ''
@@ -38,13 +42,13 @@
 </form>
 <hr>
 {#if mode === 'signIn'}
-  <p>
+  <p >
     If you dont have an account yet, 
     <span class="has-text-link" on:click={() => (mode = 'signUp')}>Sign Up!</span>
   </p>
 {:else}
   <p>
     Already have an account? 
-    <span class="has-text-link" on:click={() => (mode = 'signIn')}>Sign In!</span>
+    <span style="color: white;" class="has-text-link" on:click={() => (mode = 'signIn')}>Sign In!</span>
   </p>
 {/if}

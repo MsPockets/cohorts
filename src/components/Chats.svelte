@@ -6,7 +6,6 @@
   export let user
 
   async function newMessageScroll() {
-    console.log(user)
     await tick()
     animateScroll.scrollToBottom()
   
