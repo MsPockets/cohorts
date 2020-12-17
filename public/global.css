@@ -97,3 +97,6 @@ button:focus {
 .auth-form {
 	display: inline-block;
 }
+.chat-box {
+	padding-bottom: 55px;
+}
