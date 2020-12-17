@@ -17,7 +17,7 @@
 
 <h1 class="title has-text-info has-text-centered">Cohorts</h1>
 <h2 class="title">{mode === 'signIn' ? 'Sign In' : 'Sign Up'}</h2>
-<form on:submit|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit} class="auth-form">
   <div class="field">
     <label for="" class="label">Email</label>
     <input type="email" class="input" required bind:value={email}/>
