@@ -12,6 +12,9 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+p {
+	margin: 0;
+}
 
 a {
 	color: rgb(0,100,200);
@@ -67,8 +70,8 @@ button:focus {
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	margin: 20px;
-	max-width: 40vw;
+	margin: 10px;
+	max-width: 66vw;
 	border-radius: 15px;
 }
 .chat-bar {
@@ -96,9 +99,12 @@ button:focus {
 .auth-form {
 	display: inline-block;
 }
-.chat-box {
-	padding-bottom: 55px;
-}
+
 .sender {
 	font-size: 10px;
+}
+code {
+	border: solid black 1px;
+	background-color: lightgoldenrodyellow;
+	
 }
