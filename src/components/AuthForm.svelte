@@ -1,6 +1,6 @@
 <script>
   export let auth
-  let mode = "signUp"
+  let mode = "signIn"
   let email = ''
   let password = ''
   let displayName = ''
@@ -28,12 +28,12 @@
     <label for="" class="label">Email</label>
     <input type="email" class="input" required bind:value={email}/>
   </div>
-  <div class="field">
+  <div class="field {mode === 'signIn' ? 'sign-in' : 'sign up'}">
     <label for="" class="label" placeholder="What would you like us to call you?">Display Name</label>
     <input type="displayName" class="input" bind:value={displayName}/>
   </div>
   <div class="field">
-    <label for="" class="label">Password (Minimum of 6 characters)</label>
+    <label for="" class="label">Password</label>
     <input type="password" class="input" minlength="6" required bind:value={password}/>
   </div>
   <div class="field">

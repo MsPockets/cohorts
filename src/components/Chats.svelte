@@ -4,6 +4,7 @@
   import {tick} from 'svelte'
   import * as animateScroll from 'svelte-scrollto'
   import marked from 'marked'
+  import firebase from 'firebase/app'
   export let user
 
   
@@ -12,14 +13,16 @@
     animateScroll.scrollToBottom()
   }
   let chatBox 
+  let currentUser = firebase.auth().currentUser
   
-      
+  
+  
 </script>
 <Collection path={'/chat'} let:ref={chatsRef} let:data={messages}  on:data={newMessageScroll}>
 <div class="box chat-box" id="chat-box" bind:this={chatBox}>
-    {#each messages.sort((a,b) => a.date - b.date) as {displayName, message}}
-    
-      <div class="notification">
+    {#each messages.sort((a,b) => a.date - b.date) as {message, uid, displayName}}
+  
+      <div class="notification {uid === currentUser.uid ? 'my-message' : 'not-my-message'}">
         <div class="sender">
         {displayName}:
       </div> 
