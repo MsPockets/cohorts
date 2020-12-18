@@ -7,9 +7,11 @@
     if(!message) return
     await chatsRef.add({
       message, 
+      displayName: user.displayName,
       uid: user.uid, 
       date: Date.now(),
     })
+    conseole.log(chatsRef)
     message =''
   }
 </script>

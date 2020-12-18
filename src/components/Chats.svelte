@@ -14,10 +14,11 @@
 </script>
 <Collection path={'/chat'} let:ref={chatsRef} let:data={messages}  on:data={newMessageScroll}>
 <div class="box chat-box" id="chat-box" bind:this={chatBox}>
-    {#each messages.sort((a,b) => a.date - b.date) as {message}}
+    {#each messages.sort((a,b) => a.date - b.date) as {displayName, message}}
+    
       <div class="notification">
         <div class="sender">
-        {user.displayName || user.email}:
+        {displayName}:
       </div> 
       <div class="message-content">
         {message}
