@@ -11,7 +11,6 @@
       uid: user.uid, 
       date: Date.now(),
     })
-    conseole.log(chatsRef)
     message =''
   }
 </script>
