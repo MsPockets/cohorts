@@ -83,6 +83,7 @@ button:focus {
 	padding: 30px;
 	background-color: black;
 	display: inline-flex;
+	overflow: hidden;
 }
 .send {
 	position: fixed;
@@ -118,7 +119,13 @@ code {
 .sign-in {
 	display: none;
 }
-.my-message {
+.rgt {
 	float: right;
+	position: relative;
+	clear: both;
+}
+.lft {
+	float: left;
+	position: relative;
 	clear: both;
 }
